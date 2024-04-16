@@ -4,6 +4,10 @@ This website is similar to portfolio, in which you show the services that you pr
 #The competencies that I have applied on this website include:
 
 ------ HTML5 / CSS3
+
 ------ ReactJS
+
 ------ Animations
+
 ------ Responsive design
+
