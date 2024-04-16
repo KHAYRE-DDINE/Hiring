@@ -1,0 +1,44 @@
+.boxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-left: 202px;
+    margin-top: 39px;
+    margin-right: 73px;
+}
+
+
+.boxes .box {
+    color: #262626;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.boxes .box:hover {
+    color: #fff;
+}
+
+.boxes .box h2 {
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.boxes .box p {
+    font-size: 15px;
+    width: 90%;
+}
+
+@media (max-width: 580px) {
+    .boxes {
+        margin-left: 21px !important;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 950px) {
+    .boxes {
+        flex-wrap: wrap;
+    }
+}

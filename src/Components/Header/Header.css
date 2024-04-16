@@ -1,0 +1,77 @@
+.header {
+    position: absolute;
+    padding: 15px 50px;
+    width: calc(100% - 100px);
+    z-index: 99;
+}
+
+.header .logo {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.header .logo h2 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.header .logo img {}
+
+.header .hamburger {
+    position: absolute;
+    right: 81px;
+    text-align: center;
+    width: 40px;
+    height: 35px;
+    top: 11px;
+    cursor: pointer;
+}
+
+.header .hamburger span {
+    height: 1px;
+    width: 20px;
+    position: absolute;
+    background-color: white;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header .hamburger span::before,
+.header .hamburger span::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 1px;
+    background-color: white;
+}
+
+.header .hamburger span::before {
+    top: -10px;
+}
+
+.header .hamburger span::after {
+    bottom: -10px;
+}
+
+.header .hamburger:hover span::after,
+.header .hamburger:hover span::before {
+    left: 0px;
+}
+
+@media (max-width: 568px) {
+    .header {
+        padding: 15px 15px;
+        width: calc(100% - 30px);
+    }
+
+    .header .hamburger {
+        right: 25px;
+    }
+
+}

@@ -1,0 +1,71 @@
+.about {}
+
+.about .interface .content {
+    border-bottom: none;
+    margin: 10px 27px 10px 106px;
+}
+
+.about .interface .content .title a {
+    left: 0;
+    font-weight: 600;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.about .interface .content .title a::before {
+    content: none;
+
+}
+
+.about .interface .content .title a i {
+    transition: .3s;
+}
+
+.about .interface .content .title a:hover i {
+    position: absolute;
+    right: 0;
+}
+
+
+
+.about .boxes {
+    justify-content: flex-start;
+    margin-left: 206px;
+    gap: 54px;
+    margin-top: 0;
+}
+
+.about .boxes .box {
+    position: relative;
+    width: 170px;
+    height: 94px;
+    border: 11px solid var(--second-main-color);
+}
+
+.about .interface .content .image {
+    width: 420px;
+    margin-right: 100px;
+}
+
+.about .boxes .box img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about .boxes .box span {
+    z-index: 5;
+    position: absolute;
+    color: white;
+    bottom: -24px;
+    left: 12px;
+    font-weight: 700;
+    font-size: 21px;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.about .boxes .box:hover span {
+    bottom: -39px;
+}

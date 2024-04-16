@@ -1,0 +1,44 @@
+.navBar {
+    position: absolute;
+    right: 29%;
+    height: 100vh;
+    width: 257px;
+    overflow: hidden;
+    /* height: 0; */
+    /* width: 0; */
+    transition: .2s;
+    visibility: hidden;
+}
+
+.navBar.nav {
+    visibility: visible;
+}
+
+.navBar .list {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    transition: .3s;
+}
+
+.navBar.nav .list {
+    transform: translateY(-50%) scale(1);
+}
+
+.navBar .list .where {
+    list-style: none;
+    cursor: pointer;
+}
+
+.navBar .list .where span {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 66px;
+    text-transform: capitalize;
+    position: relative;
+    text-decoration: line-through;
+    text-decoration-color: var(--second-main-color);
+    text-decoration-thickness: 16px;
+    cursor: pointer;
+}
