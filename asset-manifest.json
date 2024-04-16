@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/hiring/static/css/main.ab9876c3.css",
+    "main.js": "/hiring/static/js/main.676eab50.js",
+    "static/media/map.jpg": "/hiring/static/media/map.04c48cb26c6615866328.jpg",
+    "static/media/space.png": "/hiring/static/media/space.87dad45905a8703bcc9f.png",
+    "static/media/about-visual.png": "/hiring/static/media/about-visual.e8c01db9a851fc62d492.png",
+    "static/media/about-winners.jpg": "/hiring/static/media/about-winners.6a6129c505a71e41f141.jpg",
+    "static/media/about-philosophy.jpg": "/hiring/static/media/about-philosophy.4ec348c2b758ac6731f2.jpg",
+    "index.html": "/hiring/index.html",
+    "main.ab9876c3.css.map": "/hiring/static/css/main.ab9876c3.css.map",
+    "main.676eab50.js.map": "/hiring/static/js/main.676eab50.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ab9876c3.css",
+    "static/js/main.676eab50.js"
+  ]
+}
