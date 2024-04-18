@@ -26,10 +26,24 @@ body {
 }
 
 .pages.nav {
-    transform: scale(.4) translate(-60%, 500px) rotate3d(11, 72, 0, 44deg);
-    border: 15px solid var(--second-main-color);
+    -webkit-transform: translateZ(-1800px) translateX(-50%) rotateY(45deg);
+    transform: translateZ(-1800px) translateX(-50%) rotateY(45deg);
+    outline: 30px solid #0f33ff;
+    border: 16px solid var(--second-main-color);
     cursor: pointer;
     transition: .3s;
+    width: 700px;
+    height: 100vh;
+}
+
+.section.nav {
+    /* position: absolute; */
+    /* transform: rotateX(45deg) translateX(-20%) scale(0.5); */
+    display: flex;
+    position: fixed;
+    -webkit-perspective: 1500px;
+    perspective: 1500px;
+
 }
 
 @media (max-width: 580px) {

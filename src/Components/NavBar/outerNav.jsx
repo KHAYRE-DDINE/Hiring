@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./outerNav.css";
-function outerNav({ navState, toPage, handleSpan }) {
+function outerNav({ navState, toPage, handleSpan, getTheIndex }) {
   // eslint-disable-next-line
   const [lists, setLists] = useState([
     "home",
@@ -13,12 +13,13 @@ function outerNav({ navState, toPage, handleSpan }) {
     toPage();
     handleSpan(e, idx);
   };
+
   return (
     <div className={navState ? "navBar nav" : "navBar"}>
       <ul className="list">
         {lists.map((l, idx) => (
           <li key={idx} onClick={(e) => doIt(e, idx)} className="where">
-            <span>{l}</span>
+            <span className="">{l}</span>
           </li>
         ))}
       </ul>

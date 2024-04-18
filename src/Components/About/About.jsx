@@ -1,13 +1,18 @@
 import React from "react";
 import "./About.css";
+import Hire from "../Hire/hire";
 import AboutVisual from "../../images/about-visual.png";
 import Interface from "../Interface/Interface";
 import Winners from "../../images/about-winners.jpg";
 import Philosophy from "../../images/about-philosophy.jpg";
 
-function About() {
+function About({navState}) {
   return (
-    <div className="about section" data-index="2">
+    <div
+      className={navState ? "about section nav" : "about section"}
+      data-index="2"
+    >
+      <Hire />
       <Interface
         title="we believe in passionate people"
         srcImg={AboutVisual}

@@ -84,3 +84,9 @@
         transform: translateX(-50%);
     }
 }
+
+@media (max-width : 1050px) {
+    .navbar {
+        display: none;
+    }
+}

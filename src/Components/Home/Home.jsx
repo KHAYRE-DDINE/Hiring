@@ -3,7 +3,7 @@ import "./Home.css";
 import Interface from "../Interface/Interface";
 import srcImg from "../../images/space.png";
 
-function Home() {
+function Home({ navState }) {
   // eslint-disable-next-line
   const [data, setData] = useState([
     {
@@ -24,7 +24,10 @@ function Home() {
   ]);
   return (
     <React.Fragment>
-      <div className="home section show" data-index="0">
+      <div
+        className={navState ? "home section nav" : "home section"}
+        data-index="0"
+      >
         <Interface
           title="your next interactive experience"
           srcImg={srcImg}

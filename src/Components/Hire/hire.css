@@ -1,0 +1,29 @@
+.hire {
+    margin-top: 28px;
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85px;
+    padding: 5px 10px;
+    cursor: pointer;
+    height: 28px;
+    height: 23px;
+    line-height: 37px;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.hire::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    background-color: var(--second-main-color);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: .2s;
+}

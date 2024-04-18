@@ -1,9 +1,14 @@
 import React from "react";
 import "./Contact.css";
+import Hire from "../Hire/hire";
 
-function Contact() {
+function Contact({ navState }) {
   return (
-    <div className="contact section" data-index="3">
+    <div
+      className={navState ? "contact section nav" : "contact section"}
+      data-index="3"
+    >
+      <Hire />
       <div className="info">
         <address>akñvm avkkmv</address>
         <a href="mailto:ahrarkhirdin@gmail.com">jfhybfv@gmail.com</a>

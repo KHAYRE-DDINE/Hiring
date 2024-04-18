@@ -1,15 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
-// import { BrowserRouter as Router } from 'react-router-dom';
-// eslint-disable-next-line
-import Home from './Components/Home/Home'
-// eslint-disable-next-line
-import Works from './Components/Works/Works'
-import About from './Components/About/About'
-// eslint-disable-next-line
-import Contact from './Components/Contact/Contact'
-// eslint-disable-next-line
-import Hiring from './Components/Hiring/Hiring'
+import { BrowserRouter } from 'react-router-dom';
+import AllPages from './Components/AllPages/AllPages'
 import Navbar from './Components/NavBar/Navbar';
 import Header from './Components/Header/Header';
 import OuterNav from './Components/NavBar/outerNav'
@@ -44,19 +36,26 @@ function App() {
   const toPage = () => {
     setNavState(false)
   }
+  const getTheIndex = (idx, output) => {
+    let spans = document.querySelectorAll(".inner span");
+    spans.forEach((sp) => {
+      const id =
+        sp.className === "active" ? parseInt(sp.dataset.index) + 1 : "";
+      return idx === id ? output = 'line' : '';
+    });
+  };
+
   return (
     <React.Fragment>
-      <div className={navState ? 'pages nav' : 'pages'}>
-        <Header handleNavbar={handleNavbar} />
+      <BrowserRouter>
+        <Header handleNavbar={handleNavbar} getTheIndex={getTheIndex} />
         <Navbar handleSpan={handleSpan} />
-        <Home />
-        {/* <Works />*/}
-        <About />
-        <Contact />
-        <Hiring />
-      </div>
-      <OuterNav navState={navState} toPage={toPage} handleSpan={handleSpan} />
-    </React.Fragment>
+        <div className={navState ? 'pages nav' : 'pages'}>
+          <AllPages navState={navState} />
+        </div>
+        <OuterNav navState={navState} toPage={toPage} handleSpan={handleSpan} getTheIndex={getTheIndex} />
+      </BrowserRouter>
+    </React.Fragment >
   );
 }
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Hiring.css";
 
-function Hiring() {
+function Hiring({ navState }) {
   // eslint-disable-next-line
   const [services, setServices] = useState([
     "app design",
@@ -16,7 +16,10 @@ function Hiring() {
     e.target.classList.toggle("clicked");
   };
   return (
-    <div className="hiring section" data-index="4">
+    <div
+      className={navState ? "hiring section nav" : "hiring section"}
+      data-index="4"
+    >
       <h1>You want us to do</h1>
       <div className="services">
         {services.map((service, idx) => (

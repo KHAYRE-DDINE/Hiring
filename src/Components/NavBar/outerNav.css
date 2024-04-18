@@ -1,6 +1,5 @@
 .navBar {
-    position: absolute;
-    right: 29%;
+
     height: 100vh;
     width: 257px;
     overflow: hidden;
@@ -37,8 +36,18 @@
     font-size: 66px;
     text-transform: capitalize;
     position: relative;
+
+    cursor: pointer;
+}
+
+.navBar .list .where span.line {
     text-decoration: line-through;
     text-decoration-color: var(--second-main-color);
-    text-decoration-thickness: 16px;
-    cursor: pointer;
+    text-decoration-thickness: 15px;
+}
+
+@media (max-width : 580px) {
+    .navBar {
+        right: 0;
+    }
 }
