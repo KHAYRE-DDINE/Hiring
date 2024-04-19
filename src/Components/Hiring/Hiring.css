@@ -1,5 +1,5 @@
 .hiring {
-    width: calc(100% - 25px);
+    width: calc(100% - 0px);
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -134,14 +134,24 @@
     .hiring {
         padding-left: 0;
         margin-top: 20%;
+        justify-content: flex-start;
     }
 
     .hiring .services {
-        grid-template-columns: repeat(5, 24px);
+        grid-template-columns: repeat(8, 24px);
+        column-gap: 25px;
     }
 
-    .hiring .services .service {
-        grid-column: 1 / 7 !important;
+    .hiring .services .service:nth-child(n) {
+        grid-column: 1 / 5 !important;
+    }
+
+    .hiring .services .service:nth-child(2n) {
+        grid-column: 5 / 9 !important;
+    }
+
+    .hiring .services .service span {
+        font-size: 14px;
     }
 
     .hiring .form {
@@ -151,7 +161,8 @@
     .hiring .form input {
         grid-column: 1 / 2 !important;
     }
+
     .hiring .form input:last-of-type {
-    width: initial !important;
-}
+        width: initial !important;
+    }
 }

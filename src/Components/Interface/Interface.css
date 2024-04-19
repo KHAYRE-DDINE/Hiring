@@ -84,7 +84,7 @@
     }
 
     .interface .content {
-        margin: 70px 25px 30px 25px !important;
+        margin: 70px 25px 0px 25px !important;
         padding-bottom: 20px;
     }
 
@@ -113,6 +113,7 @@
 @media (max-width : 1050px) {
     .interface {
         margin: 0;
+        padding-bottom: 20px;
     }
 
     .interface .content {

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function hire() {
   return (
-    <Link className="hire" to="Contact">
+    <Link className="hire" to="/hiring">
       hire us
     </Link>
   );

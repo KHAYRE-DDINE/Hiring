@@ -5,6 +5,10 @@
     z-index: 99;
 }
 
+.header a {
+    text-decoration: none;
+}
+
 .header .logo {
     width: max-content;
     display: flex;
