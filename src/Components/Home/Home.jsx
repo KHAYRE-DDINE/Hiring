@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./Home.css";
 import Interface from "../Interface/Interface";
+import { motion } from "framer-motion";
 import srcImg from "../../images/space.png";
+import { createAnimationContext } from "../NavBar/Navbar";
 
 function Home({ navState }) {
   // eslint-disable-next-line
@@ -22,9 +24,15 @@ function Home({ navState }) {
             dicta! Praesentium.`,
     },
   ]);
+
+  const testValue = useContext(createAnimationContext);
+
   return (
     <React.Fragment>
-      <div
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 3 }}
         className={navState ? "home section nav" : "home section"}
         data-index="0"
       >
@@ -43,7 +51,7 @@ function Home({ navState }) {
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </React.Fragment>
   );
 }

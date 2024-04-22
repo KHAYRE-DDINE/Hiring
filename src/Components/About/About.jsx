@@ -1,14 +1,18 @@
 import React from "react";
 import "./About.css";
+import { motion } from "framer-motion";
 import Hire from "../Hire/hire";
 import AboutVisual from "../../images/about-visual.png";
 import Interface from "../Interface/Interface";
 import Winners from "../../images/about-winners.jpg";
 import Philosophy from "../../images/about-philosophy.jpg";
 
-function About({navState}) {
+function About({ navState }) {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 3 }}
       className={navState ? "about section nav" : "about section"}
       data-index="2"
     >
@@ -34,7 +38,7 @@ function About({navState}) {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

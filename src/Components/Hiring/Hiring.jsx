@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Hiring.css";
+import { motion } from "framer-motion";
 
 function Hiring({ navState }) {
   // eslint-disable-next-line
@@ -16,7 +17,10 @@ function Hiring({ navState }) {
     e.target.classList.toggle("clicked");
   };
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 3 }}
       className={navState ? "hiring section nav" : "hiring section"}
       data-index="4"
     >
@@ -38,7 +42,7 @@ function Hiring({ navState }) {
         <input type="email" name="Email" placeholder="Email" />
         <input type="submit" value="send request" />
       </form>
-    </div>
+    </motion.div>
   );
 }
 

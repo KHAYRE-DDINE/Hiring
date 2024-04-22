@@ -1,10 +1,11 @@
-import React, { createContext, useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { createContext, useEffect, useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 export const createIndexContext = createContext(null);
+export const createAnimationContext = createContext(null);
 
-function Navbar({ navState }) {
+function Navbar({ navState, direction }) {
   // eslint-disable-next-line
   const [section, setSection] = useState([
     "home",
@@ -13,18 +14,42 @@ function Navbar({ navState }) {
     "contact",
     "hiring",
   ]);
-  const [index, setIndex] = useState(null);
+  const [index, setIndex] = useState(2);
+  const [testValue, setTestValue] = useState(null);
+
+  let store = [];
+
+  let test = (idx) => {
+    store.push(idx);
+    store[store.length - 1] > store[store.length - 2]
+      ? setTestValue("top")
+      : setTestValue("bottom");
+  };
+
+  let navigate = useNavigate();
+  useEffect(() => {
+    if (direction === "downwards") {
+      setIndex(index + 1);
+    } else {
+      setIndex(index - 1);
+    }
+    navigate(section[index] !== "home" ? section[index] : "");
+  }, [direction]);
+
+  console.log(index);
 
   return (
     <div className={navState ? "navbar section nav" : "navbar section"}>
       <createIndexContext.Provider value={index}>
+        {/* <createAnimationContext.Provider value={testValue}> */}
         <div className="inner">
           {section.map((sec, idx) => (
             <NavLink
               data-name={sec}
-              data-index={({ isActive, isPending }) =>
+              index={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? setIndex(idx) : ""
               }
+              onClick={() => setIndex(idx)}
               key={idx}
               to={sec === "home" ? "/" : sec}
             >
@@ -32,6 +57,7 @@ function Navbar({ navState }) {
             </NavLink>
           ))}
         </div>
+        {/* </createAnimationContext.Provider> */}
       </createIndexContext.Provider>
     </div>
   );

@@ -3085,7 +3085,7 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   resolved "https://registry.npmjs.org/boolbase/-/boolbase-1.0.0.tgz"
   integrity sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==
 
-bootstrap@^5.3.2:
+bootstrap@^5.3.3:
   version "5.3.3"
   resolved "https://registry.npmjs.org/bootstrap/-/bootstrap-5.3.3.tgz"
   integrity sha512-8HLCdWgyoMguSO9o+aH+iuZ+aht+mzW0u3HIMzVu7Srrpv7EBBxTnrFlSCskwdY1+EOFQSm7uMJhNQHkdPcmjg==
@@ -4911,6 +4911,13 @@ fraction.js@^4.3.7:
   version "4.3.7"
   resolved "https://registry.npmjs.org/fraction.js/-/fraction.js-4.3.7.tgz"
   integrity sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==
+
+framer-motion@^11.1.5:
+  version "11.1.5"
+  resolved "https://registry.npmjs.org/framer-motion/-/framer-motion-11.1.5.tgz"
+  integrity sha512-ogK5fc0GBUT3AjzMXPx7f74m5V1ByRqkKQARBVHpdkYTNDxb/WriANYD+5JBo1wklQQJ1HayDZtmofQLqZFcbw==
+  dependencies:
+    tslib "^2.4.0"
 
 fresh@0.5.2:
   version "0.5.2"
@@ -8058,6 +8065,11 @@ react-error-overlay@^6.0.11:
   resolved "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.11.tgz"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
 
+react-icons@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.npmjs.org/react-icons/-/react-icons-5.1.0.tgz"
+  integrity sha512-D3zug1270S4hbSlIRJ0CUS97QE1yNNKDjzQe3HqY0aefp2CBn9VgzgES27sRR2gOvFK+0CNx/BW0ggOESp6fqQ==
+
 react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
@@ -8148,7 +8160,7 @@ react-scripts@5.0.1:
   optionalDependencies:
     fsevents "^2.3.2"
 
-react@^18.0.0, react@^18.2.0, "react@>= 16", react@>=16.8:
+react@*, react@^18.0.0, react@^18.2.0, "react@>= 16", react@>=16.8:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
@@ -9328,7 +9340,7 @@ tslib@^1.8.1:
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.0.3:
+tslib@^2.0.3, tslib@^2.4.0:
   version "2.6.2"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.6.2.tgz"
   integrity sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==

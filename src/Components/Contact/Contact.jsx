@@ -1,5 +1,6 @@
 import React from "react";
 import "./Contact.css";
+import { motion } from "framer-motion";
 import Hire from "../Hire/hire";
 
 function Contact({ navState }) {
@@ -9,7 +10,12 @@ function Contact({ navState }) {
       data-index="3"
     >
       <Hire />
-      <div className="info">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 3 }}
+        className="info"
+      >
         <address>akñvm avkkmv</address>
         <a href="mailto:ahrarkhirdin@gmail.com">jfhybfv@gmail.com</a>
         <a href="tel:+21237625661">7683679202</a>
@@ -22,7 +28,7 @@ function Contact({ navState }) {
         <a type="button" href="+21237625661">
           contact us
         </a>
-      </div>
+      </motion.div>
     </div>
   );
 }

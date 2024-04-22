@@ -1,0 +1,88 @@
+.works-section .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 44px;
+    text-transform: capitalize;
+    color: lightcyan;
+    font-size: 40px;
+}
+
+.choose {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.works {
+    margin-top: 80px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.works .work {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.works .work .image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.works .work.selected .image {
+    width: 200px;
+    height: 200px;
+}
+
+.works .work .image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.works .work .name {
+    font-size: 1rem;
+    margin: 15px 0;
+    color: #858585;
+}
+
+.works .work.selected .name {
+    color: #fdfdfd;
+    font-size: 1.2rem;
+}
+
+.works .work .description {
+    color: #ffffffd9;
+    font-weight: 600;
+    display: none;
+}
+
+.works .work.work.selected .description {
+    font-size: 0.9rem;
+    display: block;
+}
+
+.works-section :is(.arrow-right, .arrow-left) {
+    background-color: #282828;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.works-section :is(.arrow-right, .arrow-left) svg {
+    fill: #ffff;
+    stroke-width: 70px;
+    stroke: white;
+}

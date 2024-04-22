@@ -5,14 +5,14 @@ body {
 }
 
 .home,
+.works-section,
 .about,
 .contact,
 .hiring {
     position: absolute;
     width: 100%;
     height: 100vh;
-    transition-duration: 1s;
-    position: absolute;
+    transition-duration: .5s;
     left: 0;
     top: 0;
 }

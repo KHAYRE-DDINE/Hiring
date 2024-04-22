@@ -1,6 +1,7 @@
 import React, { useState, createContext } from 'react';
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
+import { useMotionValue } from "framer-motion"
 import AllPages from './Components/AllPages/AllPages'
 import Navbar from './Components/NavBar/Navbar';
 import Header from './Components/Header/Header';
@@ -19,7 +20,19 @@ function App() {
     setNavState(false)
   }
 
+  const [direction, setDirection] = useState(null)
 
+  const prevY = useMotionValue(0);
+  const handleDrag = (event, info) => {
+    const deltaY = info.point.y - prevY.get();
+    prevY.set(info.point.y);
+
+    if (deltaY > 0) {
+      setDirection("downwards")
+    } else if (deltaY < 0) {
+      setDirection("upwards")
+    }
+  };
   return (
     <React.Fragment>
       <BrowserRouter>
@@ -27,8 +40,8 @@ function App() {
           <div className={navState ? 'pages nav' : 'pages'}>
             <div className={navState ? 'all nav' : 'all'}>
               <Header handleNavbar={handleNavbar} />
-              <Navbar />
-              <AllPages />
+              <Navbar direction={direction} />
+              <AllPages handleDrag={handleDrag} />
             </div>
           </div>
           <OuterNav toPage={toPage} />

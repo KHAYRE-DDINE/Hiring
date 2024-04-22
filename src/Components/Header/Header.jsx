@@ -9,7 +9,7 @@ function Header({ handleNavbar, navState }) {
   };
   return (
     <div className={navState ? "header section nav" : "header section"}>
-      <Link to="Home">
+      <Link to="/">
         <div className="logo">
           <img src={Logo} alt="Logo" />
           <h2>khayreddine</h2>
