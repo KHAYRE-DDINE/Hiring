@@ -7,7 +7,7 @@ This website is similar to portfolio, in which you show the services that you pr
 
 ------ ReactJS
 
------- Animations
+------ Framer Motion 
 
 ------ Responsive design
 
