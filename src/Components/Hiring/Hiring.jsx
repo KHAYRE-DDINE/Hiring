@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./Hiring.css";
 import { motion } from "framer-motion";
+import { handleDragContext } from "../../App";
 
 function Hiring({ navState }) {
   // eslint-disable-next-line
@@ -12,12 +13,16 @@ function Hiring({ navState }) {
     "webdesign",
     "marketing",
   ]);
+  const handleDrag = useContext(handleDragContext);
 
   const changeBackground = (e) => {
     e.target.classList.toggle("clicked");
   };
   return (
     <motion.div
+      drag="y"
+      dragConstraints={{ top: 0, bottom: 0 }}
+      onDrag={handleDrag}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 3 }}

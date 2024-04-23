@@ -7,7 +7,7 @@ import Navbar from './Components/NavBar/Navbar';
 import Header from './Components/Header/Header';
 import OuterNav from './Components/NavBar/outerNav';
 export const navStateContext = createContext(null)
-
+export const handleDragContext = createContext(null)
 
 
 function App() {
@@ -41,7 +41,9 @@ function App() {
             <div className={navState ? 'all nav' : 'all'}>
               <Header handleNavbar={handleNavbar} />
               <Navbar direction={direction} />
-              <AllPages handleDrag={handleDrag} />
+              <handleDragContext.Provider value={handleDrag}>
+                <AllPages />
+              </handleDragContext.Provider>
             </div>
           </div>
           <OuterNav toPage={toPage} />

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./Works.css";
 import { motion } from "framer-motion";
 import Hire from "../Hire/hire";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import WorkImage from "../../images/about-philosophy.jpg";
+import { handleDragContext } from "../../App";
 
 const Works = () => {
   const [works, setWorks] = useState([
@@ -25,8 +26,13 @@ const Works = () => {
     },
   ]);
 
+  const handleDrag = useContext(handleDragContext);
+
   return (
     <motion.div
+      drag="y"
+      dragConstraints={{ top: 0, bottom: 0 }}
+      onDrag={handleDrag}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 3 }}

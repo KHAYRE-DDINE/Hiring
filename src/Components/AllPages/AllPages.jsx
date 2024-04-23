@@ -18,12 +18,7 @@ function AllPages({ handleDrag }) {
 
   return (
     <motion.div className="carousel">
-      <motion.div
-        drag="y"
-        dragConstraints={{ top: 0, bottom: 0 }}
-        onDrag={handleDrag}
-        className="inner-carousel"
-      >
+      <motion.div className="inner-carousel">
         <Routes>
           <Route path="/" element={<Home navState={navState} />} />
           <Route>

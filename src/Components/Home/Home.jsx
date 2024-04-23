@@ -4,6 +4,7 @@ import Interface from "../Interface/Interface";
 import { motion } from "framer-motion";
 import srcImg from "../../images/space.png";
 import { createAnimationContext } from "../NavBar/Navbar";
+import { handleDragContext } from "../../App";
 
 function Home({ navState }) {
   // eslint-disable-next-line
@@ -26,10 +27,13 @@ function Home({ navState }) {
   ]);
 
   const testValue = useContext(createAnimationContext);
-
+  const handleDrag = useContext(handleDragContext);
   return (
     <React.Fragment>
       <motion.div
+        drag="y"
+        dragConstraints={{ top: 0, bottom: 0 }}
+        onDrag={handleDrag}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 3 }}

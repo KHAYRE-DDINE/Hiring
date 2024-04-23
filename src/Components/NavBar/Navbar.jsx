@@ -14,7 +14,7 @@ function Navbar({ navState, direction }) {
     "contact",
     "hiring",
   ]);
-  const [index, setIndex] = useState(2);
+  let [index, setIndex] = useState(0);
   const [testValue, setTestValue] = useState(null);
 
   let store = [];
@@ -29,9 +29,9 @@ function Navbar({ navState, direction }) {
   let navigate = useNavigate();
   useEffect(() => {
     if (direction === "downwards") {
-      setIndex(index + 1);
+      setIndex(index +1);
     } else {
-      setIndex(index - 1);
+      setIndex(index -1);
     }
     navigate(section[index] !== "home" ? section[index] : "");
   }, [direction]);

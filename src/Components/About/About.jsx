@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./About.css";
 import { motion } from "framer-motion";
 import Hire from "../Hire/hire";
@@ -6,10 +6,16 @@ import AboutVisual from "../../images/about-visual.png";
 import Interface from "../Interface/Interface";
 import Winners from "../../images/about-winners.jpg";
 import Philosophy from "../../images/about-philosophy.jpg";
+import { handleDragContext } from "../../App";
 
 function About({ navState }) {
+  const handleDrag = useContext(handleDragContext);
+
   return (
     <motion.div
+      drag="y"
+      dragConstraints={{ top: 0, bottom: 0 }}
+      onDrag={handleDrag}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 3 }}

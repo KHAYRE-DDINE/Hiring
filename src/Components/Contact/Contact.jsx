@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Contact.css";
 import { motion } from "framer-motion";
 import Hire from "../Hire/hire";
+import { handleDragContext } from "../../App";
 
 function Contact({ navState }) {
+  const handleDrag = useContext(handleDragContext);
+
   return (
     <div
       className={navState ? "contact section nav" : "contact section"}
@@ -11,6 +14,9 @@ function Contact({ navState }) {
     >
       <Hire />
       <motion.div
+        drag="y"
+        dragConstraints={{ top: 0, bottom: 0 }}
+        onDrag={handleDrag}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 3 }}
