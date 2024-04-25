@@ -15,7 +15,6 @@ import { navStateContext } from "../../App";
 
 function AllPages() {
   const navState = useContext(navStateContext);
-
   return (
     <motion.div className="carousel">
       <motion.div className="inner-carousel">
