@@ -13,7 +13,7 @@ import Contact from "../Contact/Contact";
 import Hiring from "../Hiring/Hiring";
 import { navStateContext } from "../../App";
 
-function AllPages({ handleDrag }) {
+function AllPages() {
   const navState = useContext(navStateContext);
 
   return (
