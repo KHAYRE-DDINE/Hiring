@@ -12,15 +12,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 36px;
 }
 
 .works {
     margin-top: 80px;
-    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 80%;
+    max-width: 800px;
 }
 
 .works .work {
@@ -34,11 +35,12 @@
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .works .work.selected .image {
-    width: 200px;
-    height: 200px;
+    width: 260px;
+    height: 260px;
 }
 
 .works .work .image img {
@@ -52,6 +54,7 @@
     font-size: 1rem;
     margin: 15px 0;
     color: #858585;
+    cursor: pointer;
 }
 
 .works .work.selected .name {
@@ -63,6 +66,7 @@
     color: #ffffffd9;
     font-weight: 600;
     display: none;
+    cursor: pointer;
 }
 
 .works .work.work.selected .description {

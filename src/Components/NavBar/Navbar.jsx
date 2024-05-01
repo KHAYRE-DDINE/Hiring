@@ -19,19 +19,21 @@ function Navbar({ navState, direction }) {
 
   let store = [];
 
-  let test = (idx) => {
-    store.push(idx);
-    store[store.length - 1] > store[store.length - 2]
-      ? setTestValue("top")
-      : setTestValue("bottom");
-  };
+  // let test = (idx) => {
+  //   store.push(idx);
+  //   store[store.length - 1] > store[store.length - 2]
+  //     ? setTestValue("top")
+  //     : setTestValue("bottom");
+  // };
 
   let navigate = useNavigate();
   useEffect(() => {
     if (direction === "downwards") {
-      setIndex((id) => id + 1);
+      index === section.length - 1 ? setIndex(0) : setIndex((prev) => prev + 1);
+      console.log(index);
     } else {
-      setIndex((id) => id - 1);
+      index === section.length - 1 ? setIndex(0) : setIndex((prev) => prev--);
+      console.log(index);
     }
     navigate(section[index] !== "home" ? section[index] : "");
   }, [direction]);

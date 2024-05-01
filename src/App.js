@@ -19,14 +19,12 @@ function App() {
   const toPage = () => {
     setNavState(false)
   }
-
   const [direction, setDirection] = useState(null)
 
   const prevY = useMotionValue(0);
   const handleDrag = (event, info) => {
     const deltaY = info.point.y - prevY.get();
     prevY.set(info.point.y);
-
     if (deltaY > 0) {
       setDirection("downwards")
     } else if (deltaY < 0) {

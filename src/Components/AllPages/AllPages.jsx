@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
-import { motion, useMotionValue } from "framer-motion";
+import { motion } from "framer-motion";
 
 // eslint-disable-next-line
 import Home from "../Home/Home";

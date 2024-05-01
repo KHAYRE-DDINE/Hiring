@@ -4,30 +4,38 @@ import { motion } from "framer-motion";
 import Hire from "../Hire/hire";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
-import WorkImage from "../../images/about-philosophy.jpg";
+import WorkMetiew from "../../images/work-metiew-smith.jpg";
+import WorkAlex from "../../images/work-alex-nowak.jpg";
+import WorkVictory from "../../images/work-victory.jpg";
 import { handleDragContext } from "../../App";
 
 const Works = () => {
   const [works, setWorks] = useState([
     {
-      image: WorkImage,
+      image: WorkMetiew,
       name: "Lorem ipsum dolor sit amet!",
       description: " aknlcl jcsahuc ak ",
     },
     {
-      image: WorkImage,
+      image: WorkAlex,
       name: "Lorem ipsum dolor sit amet!",
       description: " aknlcl jcsahuc ak ",
     },
     {
-      image: WorkImage,
+      image: WorkVictory,
       name: "Lorem ipsum dolor sit amet!",
       description: " aknlcl jcsahuc ak ",
     },
   ]);
+  const [id, setId] = useState(1);
 
   const handleDrag = useContext(handleDragContext);
-
+  const increment = () => {
+    return id === 2 ? setId(0) : setId((prev) => prev + 1);
+  };
+  const decrement = () => {
+    return id === 0 ? setId(2) : setId((prev) => prev - 1);
+  };
   return (
     <motion.div
       drag="y"
@@ -43,12 +51,12 @@ const Works = () => {
         selected work
       </h1>
       <div className="choose ">
-        <div className="arrow-left">
+        <div className="arrow-left" onClick={decrement}>
           <IoIosArrowBack />
         </div>
         <div className="works">
-          {works.map((work, id) => (
-            <div key={id} className="work">
+          {works.map((work, idx) => (
+            <div key={idx} className={id === idx ? "work selected" : "work"}>
               <div className="image">
                 <img src={work.image} alt={work.image} />
               </div>
@@ -57,7 +65,7 @@ const Works = () => {
             </div>
           ))}
         </div>
-        <div className="arrow-right">
+        <div className="arrow-right" onClick={increment}>
           <IoIosArrowForward />
         </div>
       </div>
