@@ -1,10 +1,8 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import "./Home.css";
 import Interface from "../Interface/Interface";
 import { motion } from "framer-motion";
 import srcImg from "../../images/space.png";
-import { createAnimationContext } from "../NavBar/Navbar";
-import { handleDragContext } from "../../App";
 
 function Home({ navState }) {
   // eslint-disable-next-line
@@ -26,14 +24,9 @@ function Home({ navState }) {
     },
   ]);
 
-  const testValue = useContext(createAnimationContext);
-  const handleDrag = useContext(handleDragContext);
   return (
     <React.Fragment>
       <motion.div
-        drag="y"
-        dragConstraints={{ top: 0, bottom: 0 }}
-        onDrag={handleDrag}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 3 }}
@@ -48,10 +41,20 @@ function Home({ navState }) {
         <div className="container">
           <div className="boxes">
             {data.map((e, id) => (
-              <div key={id} className="box">
+              <motion.div
+                initial={{ y: "-500px" }}
+                whileInView={{ y: "0" }}
+                transition={{
+                  ease: "linear",
+                  duration: 2,
+                  y: { duration: 1 },
+                }}
+                key={id}
+                className="box"
+              >
                 <h2>{e.head}</h2>
                 <p>{e.paragraph}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

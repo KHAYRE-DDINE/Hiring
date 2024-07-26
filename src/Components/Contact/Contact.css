@@ -5,6 +5,14 @@
     background-size: cover;
 }
 
+.contact .info::before {
+    content: '';
+    position: absolute;
+    width: 136vw;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0;
+}
 
 .contact .info {
     position: absolute;
@@ -24,7 +32,7 @@
 
 .contact .info address {
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .contact .info a {

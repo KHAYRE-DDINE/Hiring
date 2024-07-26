@@ -7,7 +7,6 @@ import { IoIosArrowForward } from "react-icons/io";
 import WorkMetiew from "../../images/work-metiew-smith.jpg";
 import WorkAlex from "../../images/work-alex-nowak.jpg";
 import WorkVictory from "../../images/work-victory.jpg";
-import { handleDragContext } from "../../App";
 
 const Works = () => {
   const [works, setWorks] = useState([
@@ -29,7 +28,6 @@ const Works = () => {
   ]);
   const [id, setId] = useState(1);
 
-  const handleDrag = useContext(handleDragContext);
   const increment = () => {
     return id === 2 ? setId(0) : setId((prev) => prev + 1);
   };
@@ -38,9 +36,6 @@ const Works = () => {
   };
   return (
     <motion.div
-      drag="y"
-      dragConstraints={{ top: 0, bottom: 0 }}
-      onDrag={handleDrag}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 3 }}
@@ -58,7 +53,16 @@ const Works = () => {
           {works.map((work, idx) => (
             <div key={idx} className={id === idx ? "work selected" : "work"}>
               <div className="image">
-                <img src={work.image} alt={work.image} />
+                <motion.img
+                  animate={{
+                    scale: [1, 1.5, 1.5, 1],
+                    rotate: [0, 90, 90, 0],
+                    borderRadius: ["50%", "30%", "10%", "50%"],
+                  }}
+                  transition={{ duration: 2, delay: 1 }}
+                  src={work.image}
+                  alt={work.image}
+                />
               </div>
               <h2 className="name">{work.name}</h2>
               <p className="description">{work.description}</p>

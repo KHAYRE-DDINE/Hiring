@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import "./Hiring.css";
-import { motion } from "framer-motion";
-import { handleDragContext } from "../../App";
+import { animate, motion } from "framer-motion";
 
 function Hiring({ navState }) {
   // eslint-disable-next-line
@@ -13,41 +12,89 @@ function Hiring({ navState }) {
     "webdesign",
     "marketing",
   ]);
-  const handleDrag = useContext(handleDragContext);
 
   const changeBackground = (e) => {
     e.target.classList.toggle("clicked");
   };
+
+  const gridVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.25,
+      },
+    },
+  };
+
+  const inputVariant = {
+    duration: 1,
+  };
   return (
-    <motion.div
-      drag="y"
-      dragConstraints={{ top: 0, bottom: 0 }}
-      onDrag={handleDrag}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 3 }}
+    <div
       className={navState ? "hiring section nav" : "hiring section"}
       data-index="4"
     >
       <h1>You want us to do</h1>
-      <div className="services">
+      <motion.div
+        variants={gridVariants}
+        initial="hidden"
+        animate="show"
+        className="services"
+      >
         {services.map((service, idx) => (
-          <div
+          <motion.div
+            variants={{
+              hidden: { opacity: 0 },
+              show: { opacity: 1 },
+            }}
             key={idx}
             onClick={(e) => changeBackground(e)}
             className="service"
           >
             <i className="bi bi-check2"></i>
             <span>{service}</span>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
       <form action="" className="form">
-        <input type="text" name="Name" placeholder="Name" />
-        <input type="email" name="Email" placeholder="Email" />
-        <input type="submit" value="send request" />
+        <motion.input
+          initial={{
+            x: "-200px",
+          }}
+          whileInView={{
+            x: "0",
+          }}
+          transition={inputVariant}
+          type="text"
+          name="name"
+          placeholder="Name"
+        />
+        <motion.input
+          initial={{
+            x: "200px",
+          }}
+          whileInView={{
+            x: "0",
+          }}
+          transition={inputVariant}
+          type="email"
+          name="email"
+          placeholder="Email"
+        />
+        <motion.input
+          initial={{
+            y: "100px",
+          }}
+          whileInView={{
+            y: "0",
+          }}
+          transition={inputVariant}
+          type="submit"
+          value="send request"
+        />
       </form>
-    </motion.div>
+    </div>
   );
 }
 

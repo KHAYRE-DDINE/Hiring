@@ -16,19 +16,15 @@ import { navStateContext } from "../../App";
 function AllPages() {
   const navState = useContext(navStateContext);
   return (
-    <motion.div className="carousel">
-      <motion.div className="inner-carousel">
-        <Routes>
-          <Route path="/" element={<Home navState={navState} />} />
-          <Route>
-            <Route path="Works" element={<Works navState={navState} />} />
-          </Route>
-          <Route path="About" element={<About navState={navState} />} />
-          <Route path="Contact" element={<Contact navState={navState} />} />
-          <Route path="Hiring" element={<Hiring navState={navState} />} />
-        </Routes>
-      </motion.div>
-    </motion.div>
+    <Routes>
+      <Route path="/" element={<Home navState={navState} />} />
+      <Route>
+        <Route path="Works" element={<Works navState={navState} />} />
+      </Route>
+      <Route path="About" element={<About navState={navState} />} />
+      <Route path="Contact" element={<Contact navState={navState} />} />
+      <Route path="Hiring" element={<Hiring navState={navState} />} />
+    </Routes>
   );
 }
 

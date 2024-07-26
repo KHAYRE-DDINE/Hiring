@@ -1,8 +1,7 @@
 import React from "react";
 import "./Interface.css";
 import { Link } from "react-router-dom";
-// import { Link } from "react-router-dom";
-// import "bootstrap/dist/css/bootstrap.min.css";
+import { motion } from "framer-motion";
 
 function Interface({ title, srcImg, btn }) {
   return (
@@ -10,14 +9,33 @@ function Interface({ title, srcImg, btn }) {
       <div className="container">
         <div className="content">
           <div className="title">
-            <h1>{title}</h1>
+            <motion.h1
+              initial={{ x: "-200px" }}
+              whileInView={{ x: "0" }}
+              transition={{
+                ease: "linear",
+                duration: 2,
+                x: { duration: 1 },
+              }}
+            >
+              {title}
+            </motion.h1>
             <Link to="/hiring">
               {btn} <i className="bi bi-arrow-right"></i>
             </Link>
           </div>
-          <div className="image">
+          <motion.div
+            initial={{ x: "200px" }}
+            whileInView={{ x: "0" }}
+            transition={{
+              ease: "linear",
+              duration: 2,
+              x: { duration: 1 },
+            }}
+            className="image"
+          >
             <img src={srcImg} alt="Photos" />
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

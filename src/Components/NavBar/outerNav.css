@@ -54,7 +54,7 @@
 
 @media (max-width : 580px) {
     .navBar {
-        right: 0;
+        right: 12px;
         width: 205px;
     }
 
@@ -63,6 +63,7 @@
     }
 
     .navBar .list .where a {
-        font-size: 51px;
+        font-size: 40px;
+        width: 173px;
     }
 }

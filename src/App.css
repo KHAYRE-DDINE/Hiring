@@ -11,7 +11,7 @@ body {
 .hiring {
     position: absolute;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     transition-duration: .5s;
     left: 0;
     top: 0;
@@ -19,7 +19,7 @@ body {
 
 .pages {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     position: fixed;
     right: 0;
 }

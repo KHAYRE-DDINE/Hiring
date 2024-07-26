@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import "./outerNav.css";
 import { navStateContext } from "../../App";
 import { createIndexContext } from "./Navbar";
-function outerNav({ toPage }) {
+function outerNav({ toPage, setIndex }) {
   // eslint-disable-next-line
   const [lists, setLists] = useState([
     "home",
@@ -27,6 +27,7 @@ function outerNav({ toPage }) {
             <NavLink
               to={l === "home" ? "/" : l}
               className={index === idx ? "active" : ""}
+              onClick={() => setIndex(idx)}
             >
               {l}
             </NavLink>
