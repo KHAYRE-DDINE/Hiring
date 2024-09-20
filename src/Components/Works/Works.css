@@ -36,6 +36,7 @@
     height: 150px;
     border-radius: 50%;
     cursor: pointer;
+    transition: .5s;
 }
 
 .works .work.selected .image {
